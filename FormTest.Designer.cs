@@ -34,13 +34,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Flag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,26 +92,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.Flag});
             this.dataGridView1.Location = new System.Drawing.Point(136, 143);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(373, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(550, 150);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            // 
-            // Flag
-            // 
-            this.Flag.HeaderText = "Flag";
-            this.Flag.Name = "Flag";
-            this.Flag.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Flag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // button4
             // 
@@ -159,11 +145,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(372, 298);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "salvar";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 489);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
@@ -175,8 +172,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            // this.Name = "Form1";
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,13 +190,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Flag;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
